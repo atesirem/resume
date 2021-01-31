@@ -687,7 +687,14 @@ footer .container {
   .footer {
     height: 100px; }
   .a1 .container {
-    padding: 1rem 4rem; }
+    max-width: 765px;
+    padding: 1rem 0rem; }
+    .a1 .container .a1-header {
+      padding: 1rem 4rem; }
+    .a1 .container .a1-content {
+      padding: 1rem 4rem; }
+    .a1 .container .a1-footer {
+      padding: 0; }
   .a1 p {
     margin-bottom: 5rem; }
   .a1-content {
@@ -720,6 +727,8 @@ footer .container {
             line-height: 0px;
             padding: 20px;
             display: inline; }
+  .bio .container {
+    max-width: 765px; }
   .bio .award {
     margin: 0.5rem 0.1rem;
     padding: 0.5rem; }

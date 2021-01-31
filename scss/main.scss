@@ -886,7 +886,21 @@ footer {
 
     .a1 {
         .container {
-            padding: 1rem 4rem;
+            max-width: 765px;
+            padding: 1rem 0rem;
+
+            .a1-header {
+                padding: 1rem 4rem;
+
+            }
+
+            .a1-content {
+                padding: 1rem 4rem;
+            }
+
+            .a1-footer {
+                padding: 0;
+            }
         }
 
         p {
@@ -946,11 +960,16 @@ footer {
     }
 
     .bio {
+        .container {
+            max-width: 765px;
+        }
+
         .award {
             margin: 0.5rem 0.1rem;
             padding: 0.5rem;
 
         }
+
     }
 
     .references {
