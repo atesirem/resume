@@ -5,7 +5,9 @@ a {
 ul {
   list-style: none; }
 
-h2, h2, h3 {
+h2,
+h2,
+h3 {
   text-transform: uppercase; }
 
 img {
@@ -26,9 +28,6 @@ img {
   width: 5px;
   height: auto;
   margin: 0px 1rem; }
-
-.container {
-  padding: 0px 4rem; }
 
 .btn-light, .btn-dark {
   border: none;
@@ -120,13 +119,18 @@ body {
   color: #333;
   line-height: 1.8rem; }
 
+.container {
+  max-width: 1280px;
+  margin: auto; }
+
 .header {
   height: 100vh;
-  background-image: url("../dist/img/showcase.jpg");
+  background-image: url("../img/showcase.jpg");
   background-repeat: no-repeat;
   background-position-x: center;
   background-position-y: center;
-  background-size: cover; }
+  background-size: cover;
+  background-color: #333; }
   .header .container {
     display: flex;
     flex-direction: column; }
@@ -234,8 +238,6 @@ body {
 .a2 {
   background-color: #fff;
   color: #000000; }
-  .a2 .container {
-    padding: 0px 0rem; }
   .a2-header {
     display: flex;
     flex-direction: column;
@@ -266,7 +268,7 @@ body {
           background-color: #ffd900;
           color: #333;
           transform: scale(1.1);
-          transition: background-color 1s, transform 1s,color 1s; }
+          transition: background-color 1s, transform 1s, color 1s; }
       .a2-content div h3 {
         margin-top: 1rem; }
     .a2-content-step {
@@ -284,7 +286,8 @@ body {
       transition: background-color 1s; }
       .a2-content-step:hover {
         background-color: #f4f4f4; }
-    .a2-content-icon, .a2-content .fas {
+    .a2-content-icon,
+    .a2-content .fas {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -342,7 +345,7 @@ footer .container {
 
 .header-about {
   height: 5.5rem;
-  background-image: url("../dist/img/showcase.jpg");
+  background-image: url("../img/showcase.jpg");
   background-repeat: no-repeat;
   background-position-x: 20%;
   background-position-y: 30%;
@@ -382,7 +385,6 @@ footer .container {
             border-bottom: 2px solid #ccc; }
 
 .bio .container {
-  max-width: 1280px;
   padding: 0 1.5rem;
   margin: auto;
   overflow: hidden;
@@ -428,13 +430,14 @@ footer .container {
 
 .progress {
   display: flex;
-  flex-direction: column;
   background-color: #333;
   color: #f4f4f4;
   padding-bottom: 1.2rem;
   padding-top: 1rem; }
   .progress .container {
-    display: inline-block; }
+    display: inline-block;
+    flex-basis: 100%;
+    padding: 1.5rem 3.5rem; }
   .progress-bar {
     height: 20px;
     border: none;
@@ -463,7 +466,10 @@ footer .container {
 
 .testimonials {
   display: flex;
-  flex-direction: row; }
+  flex-direction: row;
+  text-align: center;
+  justify-content: center;
+  align-items: center; }
   .testimonials .container {
     margin: 2rem 1rem;
     text-align: center;
@@ -499,7 +505,6 @@ footer .container {
           height: 50px; }
 
 .mywork .container {
-  max-width: 1280px;
   padding: 0.5rem 1.5rem;
   margin-bottom: 1rem; }
 
@@ -573,7 +578,7 @@ footer .container {
       padding: 1rem; }
 
 .contact .container {
-  max-width: 1280px;
+  max-width: 980px;
   padding: 3rem 0rem;
   margin-bottom: 1rem; }
 
@@ -620,8 +625,8 @@ footer .container {
     color: #333; }
 
 .info .container {
-  margin: 0;
-  padding: 0; }
+  margin: auto;
+  max-width: 100%; }
 
 .info-flex {
   display: flex;
@@ -634,7 +639,7 @@ footer .container {
   .info-flex__box {
     display: flex;
     flex-direction: column;
-    flex-basis: 32%;
+    flex-basis: 20%;
     align-items: center;
     justify-content: center;
     padding: 3rem 2rem; }
@@ -651,13 +656,14 @@ footer .container {
     text-align: center;
     padding: 1rem 3rem; }
     .add .container h1 {
-      padding: 5rem 0.1rem;
+      padding: 2rem 0.1rem;
       font-size: 4rem;
       line-height: 4rem; }
 
-@media screen and (min-width: 1300px) {
+@media screen and (max-width: 1300px) {
+  .container {
+    max-width: 980px; }
   .a1 .container {
-    max-width: 1280px;
     padding: 1rem 5rem 5rem 5rem;
     margin: auto;
     overflow: hidden; }
@@ -668,9 +674,13 @@ footer .container {
   .a2 p {
     margin-bottom: 5rem; }
   .bio .container {
-    padding: 0px 2rem; } }
+    padding: 0px 2rem; }
+  .contact .container {
+    max-width: 680px; } }
 
 @media screen and (max-width: 768px) {
+  .container {
+    max-width: 580px; }
   .header .logo img {
     width: 90px;
     height: auto; }
@@ -726,13 +736,21 @@ footer .container {
         text-align: center;
         padding: 0 1rem; }
   .mywork-gallery {
-    grid-template-areas: 'item1 item2' 'item3 item4' 'item5 item6' 'item7 item8'  'item9 item9';
+    grid-template-areas: 'item1 item2' 'item3 item4' 'item5 item6' 'item7 item8' 'item9 item9';
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr; }
     .mywork-gallery__item:nth-child(9) {
-      display: none; } }
+      display: none; }
+  .info-flex__box {
+    flex-basis: 32%; }
+  .progress {
+    flex-wrap: wrap; }
+  .contact .container {
+    max-width: 480px; } }
 
 @media screen and (max-width: 500px) {
+  .container {
+    max-width: 380px; }
   .header {
     height: 50vh; }
     .header-navbar {
@@ -777,7 +795,6 @@ footer .container {
     .a2 h2 {
       line-height: 2.2rem; }
   .bio .container {
-    max-width: 1280px;
     padding: 0 1.5rem;
     margin: auto;
     overflow: hidden; }
@@ -796,7 +813,7 @@ footer .container {
     flex-direction: column;
     margin: 1rem 1rem 0rem 1rem; }
   .mywork-gallery {
-    grid-template-areas: 'item1'  'item2' 'item3 ' 'item4' 'item5'  'item6' 'item7' 'item8'  'item9';
+    grid-template-areas: 'item1' 'item2' 'item3 ' 'item4' 'item5' 'item6' 'item7' 'item8' 'item9';
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: 1fr; }
     .mywork-gallery__item:nth-child(9) {
